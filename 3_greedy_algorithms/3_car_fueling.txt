@@ -1,0 +1,30 @@
+numRefills = 0
+currentPosition = 0
+currentFuel = L
+while(currentPosition <= n){
+   if (currentFuel <= x[currentPosition+1] - x[currentPosition]) {
+      currentFuel = L;
+      numRefills++;
+   }
+   currentFuel -= (x[currentPosition+1] - x[currentPostion]);
+   if ( currentFuel < 0 ) 
+      return Impossible;
+   currentPosition++;
+}
+
+return numRefills
+
+========================================================================================
+numRefills = 0 
+currentPosition = 0 
+while(currentPosition <= n){ 
+    lastPosition = currentPosition 
+    while(currentPosition <= n &&x[currentPosition + 1] – x[lastPosition] <= L) {     
+         currentPosition++; 
+    } 
+if (currentPosition == lastPosition) 
+    return IMPOSSIBLE; 
+if (currentPosition <= n) 
+   numRefills ++; 
+} 
+return numRefills

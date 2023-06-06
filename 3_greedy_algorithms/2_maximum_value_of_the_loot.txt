@@ -1,0 +1,19 @@
+cost[n+1, W+1]
+KNAPSACK-01(n, W, wm, vm)
+  for w in 0 to W
+    cost[0, w] = 0
+
+  for i in 0 to n
+    cost[i, 0] = 0
+
+  for i in 1 to n
+    for w in 1 to W
+      if wm[i] > w
+        cost[i, w] = cost[i-1, w]
+      else
+        if vm[i]+cost[i-1, w-wm[i]] > cost[i-1, w]
+          cost[i, w] = vm[i] + cost[i-1, w-wm[i]]
+        else
+          cost[i, w] = cost[i-1, w]
+
+  return cost[n, W]
